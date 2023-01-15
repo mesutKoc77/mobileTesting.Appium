@@ -40,6 +40,7 @@ public class n11Pages {
     }
 
     public void kategoriTiklama() {
+        elementHelper.sleep(30);
         driver.findElement(kategorilerbutonu).click();
         //denemedim ama aşağıdaki şekilde de olabilir çünkü java atamaya sagdan sola başlar, biz aşağıda
         //"findElementBy" i sectigimiz için ayrıca by eklememize gerek kalmadı ama yukarıda classs seviyesinde webelement leri
@@ -52,10 +53,11 @@ public class n11Pages {
 
 
     public void elektronikTiklama() {
+        elementHelper.sleep(30);
         List<WebElement> ListofElement = driver.findElements(MobileBy.AndroidUIAutomator("new UiSelector().resourceId(\"com.dmall.mfandroid:id/tvCategoryItem\")"));
         String yazisi = ListofElement.get(1).getText();
         String beklenenYazisi = "Elektronik";
-        System.out.println(yazisi);
+
 
         Assert.assertEquals(beklenenYazisi, yazisi);
         ListofElement.get(1).click();
@@ -64,19 +66,23 @@ public class n11Pages {
     }
 
     public void telefonVeAksesuarSecimi() {
-        List<WebElement> elements = driver.findElements(MobileBy.AndroidUIAutomator(" new UiSelector().resourceId(\"com.dmall.mfandroid:id/ivCategoryItem\")"));
-        elements.get(0).click();
+        elementHelper.sleep(3);
+        List <WebElement> ListofElement = driver.findElements(MobileBy.AndroidUIAutomator("new UiSelector().resourceId(com.dmall.mfandroid:id/ivCategoryItem)"));
+        ListofElement.get(0).click();
 
 
     }
 
     public void cepTelefonuSecimi() {
+        elementHelper.sleep(30);
         List<WebElement> elements =driver.findElements(MobileBy.AndroidUIAutomator("new UiSelector().resourceId(\\\"com.dmall.mfandroid:id/ivCategoryItem\\\")"));
+        elementHelper.sleep(30);
         elements.get(0).click();
 
     }
 
     public void markaSecimi() {
+        elementHelper.sleep(30);
         //yuarıya gittik claas level de variable olarak taanımlasdık buraya cektik.
         driver.findElement(apple).click();
        //ya da bunu dene driver.findElement(MobileBy.AndroidUIAutomator("new UiSelector().text(\\\"Apple\\\")")).click();
@@ -85,6 +91,7 @@ public class n11Pages {
     }
 
     public void filtrelemeTiklama() {
+        elementHelper.sleep(30);
         //elementi bulurken veya bbelirlerken oncelikle emulatır ve ampıum eşitleemsi yapılmalı.
         driver.findElement(filtrele).click();
 
@@ -92,38 +99,57 @@ public class n11Pages {
     }
 
     public void filtrelemeYap() {
+        elementHelper.sleep(30);
         driver.findElement(dahiliHafiza).click();
+        elementHelper.sleep(30);
         driver.findElement(gb).click();
+        elementHelper.sleep(30);
         driver.findElement(uygula).click();
+        elementHelper.sleep(30);
         driver.findElement(model).click();
+        elementHelper.sleep(30);
         driver.findElement(iPhone).click();
+        elementHelper.sleep(30);
         driver.findElement(uygula).click();
+        elementHelper.sleep(30);
         driver.findElement(renk).click();
+        elementHelper.sleep(30);
         driver.findElement(mavi).click();
+        elementHelper.sleep(30);
         driver.findElement(uygula).click();
+        elementHelper.sleep(30);
 
 
     }
 
     public void sonuclariGosterTiklama() {
+        elementHelper.sleep(30);
         driver.findElement(sonucGoster).click();
+
+
 
 
     }
 
     public void urunSepeteEkleme() {
+        elementHelper.sleep(30);
         driver.findElement(artiButonu).click();
+
 
     }
 
     public void sepeteGit() {
+        elementHelper.sleep(30);
         driver.findElement(sepetim).click();
+
 
 
     }
 
     public void sepetKontrol() {
+        elementHelper.sleep(30);
         elementHelper.checkVisible(sepetKontrol);
+
 
        // wait.until(ExpectedConditions.presenceOfElementLocated(sepetKontrol)).click();
 

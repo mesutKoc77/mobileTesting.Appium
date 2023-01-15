@@ -16,7 +16,7 @@ public class ElementHelper {
 
     public ElementHelper(AppiumDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver,(10));
+        this.wait = new WebDriverWait(driver,(30));
         this.action = new Actions(driver);
     }
     public WebElement presenceElement(By key){
@@ -43,6 +43,14 @@ public class ElementHelper {
     public void checkVisible(By key){
         wait.until(ExpectedConditions.presenceOfElementLocated(key));
 
+    }
+
+    public void sleep(int dauert){
+        try {
+            Thread.sleep(dauert*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
